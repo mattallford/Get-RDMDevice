@@ -5,12 +5,14 @@ This can be used to export the device details, or it can be piped to another fun
 Requires the VMware PowerCLI cmdlets - Always run the latest where possible
 
 # Parameters
-- NimbleGroup - Specify the FQDN or IP address for the management interface of the Nimble Storage Group
-- OutputFile - Specify the full path for the OutputFile (CSV)
+-Location. Set the location to limit the scope of virtual machines that are checked for RDM configurations
 
 # Example Usage
    Get-RDMDevice
    This will return all RDM devices connected to virtual machines in the environment
+   
+   Get-RDMDevice -Location Cluster1
+   This will return all RDM devices connected to virtual machines located in Cluster1
 
 # Change Log
 V1.00, 19-10-2016 - Initial Version
