@@ -4,6 +4,13 @@ This can be used to export the device details, or it can be piped to another fun
 
 Requires the VMware PowerCLI cmdlets - Always run the latest where possible
 
+This is a function, so dot source the PS1 which will then enable you to use the function.
+For example:
+1. Download and save the ps1 to c:\scripts
+2. Run the following to dot source the script and import the function:
+. C:\Scripts\Get-RDMDevice.ps1
+3. You can now run Get-RDMDevice
+
 # Parameters
 -Location. Set the location to limit the scope of virtual machines that are checked for RDM configurations
 
