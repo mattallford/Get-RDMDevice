@@ -36,10 +36,10 @@ function Get-RDMDevice
     {
         #If the location is specified, get all VMs in the specified location that has a RDM attached
         if ($Location){
-        $RDMDevices = Get-VM -Location $Location | Get-HardDisk | Where-Object {$_.DiskType -Match 'Raw'}
+        $RDMDevices = Get-VM -Location $Location | Get-HardDisk -DiskType "RawPhysical","RawVirtual"
         }ELSE{
         #If the location is not specified, get all VMs in the environment that have a RDM attached
-        $RDMDevices = Get-VM | Get-HardDisk | Where-Object {$_.DiskType -Match 'Raw'}
+        $RDMDevices = Get-VM | Get-HardDisk -DiskType "RawPhysical","RawVirtual"
         }
 
         if ($RDMDevices){
